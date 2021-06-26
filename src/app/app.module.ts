@@ -18,8 +18,8 @@ import { MessageModule } from './messages/message.module';
 
 @NgModule({
   imports: [
-    BrowserModule,//basic directives
-    HttpClientModule,//basic http directibes
+    BrowserModule,//basic directives like ngIf and ngFor/
+    HttpClientModule,//basic http directives
     InMemoryWebApiModule.forRoot(ProductData, { delay: 1000 }),//simulates APi calls
     ProductModule,//feature module
     UserModule,//feature module

@@ -15,9 +15,9 @@ export class ProductService {
   constructor(private http: HttpClient) { }
 
   getProducts(): Observable<Product[]> {
-    return this.http.get<Product[]>(this.productsUrl)
+    return this.http.get<Product[]>(this.productsUrl)//observables are a stream of data that we can pipe into to create access
       .pipe(
-        tap(data => console.log(JSON.stringify(data))),
+        tap(data => console.log(JSON.stringify(data))),//tap method tels us what to do with our data
         catchError(this.handleError)
       );
   }
