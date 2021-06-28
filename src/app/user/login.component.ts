@@ -3,6 +3,8 @@ import { NgForm } from '@angular/forms';
 
 import { AuthService } from './auth.service';
 
+import { Router } from '@angular/router';
+
 @Component({
   templateUrl: './login.component.html'
 })
@@ -10,7 +12,7 @@ export class LoginComponent {
   errorMessage: string;
   pageTitle = 'Log In';
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private r: Router) { }
 
   login(loginForm: NgForm): void {
     if (loginForm && loginForm.valid) {
@@ -22,5 +24,8 @@ export class LoginComponent {
     } else {
       this.errorMessage = 'Please enter a user name and password.';
     }
+
+    this.r.navigate(['/welcome'])
+
   }
 }
